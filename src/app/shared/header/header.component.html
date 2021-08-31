@@ -1,0 +1,56 @@
+<div class="top-bar">
+  <div class="container">
+    <div
+      class="
+        d-flex
+        flex-row
+        justify-content-between
+        align-items-center
+        p-2
+        px-md-0
+      "
+    >
+      <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a [routerLink]="['/']"
+          ><img
+            src="http://demo.roadthemes.com/safira/wp-content/uploads/2020/06/Logox2_black.png
+                    "
+            alt=""
+        /></a>
+      </h5>
+      <app-searchbox></app-searchbox>
+      <nav
+        class="
+          my-2 my-md-0
+          mr-md-3
+          ml-5
+          d-flex
+          font-weight-normal
+          d-none d-lg-block d-xl-block
+        "
+      >
+        <li>
+          <a (click)="handleOpenForm()" class="py-1 px-3 text-dark">LOGIN</a>
+        </li>
+        <app-login [isOpen]="isOpen" (closeForm)="handleOpenForm()"></app-login>
+        <div class="icons-right">
+          <ul class="d-flex">
+            <li class="d-flex demo ml-2">
+              <i class="far fa-heart"></i> <span>0</span>
+            </li>
+
+            <li routerLink="/cart" class="d-flex demo ml-2">
+              <i class="fas fa-shopping-cart"></i>
+              <span>{{ countCart }}</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hambuger d-block d-lg-none d-xl-none">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
