@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/models/cart';
+import { SharedData } from 'src/app/models/share-data';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
   }
   getCountCart() {
     this.cartService.getCartItems().subscribe((items: Cart[]) => {
+      this.carts = items;
       this.countCart = items.length;
     });
   }

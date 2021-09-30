@@ -79,9 +79,12 @@
             </tbody>
           </table>
           <div class="card-body border-top">
-            <a href="#" class="btn btn-success float-md-right">
-              Make Purchase <i class="fa fa-chevron-right"></i>
-            </a>
+            <button
+              (click)="loadCartItems()"
+              class="btn btn-success float-md-right"
+            >
+              Update Carts <i class="fa fa-chevron-right"></i>
+            </button>
             <a href="#" class="btn btn-light">
               <i class="fa fa-chevron-left"></i> Continue shopping
             </a>

@@ -29,7 +29,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { CartDetailComponent } from './views/cart-detail/cart-detail.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { ExampleComponent } from './components/example/example.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { LoginComponent } from './components/login/login.component';
     CartItemComponent,
     CartDetailComponent,
     LoginComponent,
+    ExampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,8 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

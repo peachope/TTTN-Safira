@@ -5,17 +5,53 @@
     <div [ngClass]="isModalSignUp ? 'container sign-up-mode' : 'container'">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="#" class="sign-in-form" [formGroup]="exform">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input
+                formControlName="userName"
+                type="text"
+                placeholder="Username"
+              />
+              <p
+                *ngIf="userName?.invalid && userName?.touched"
+                class="text-danger require"
+              >
+                username is required
+              </p>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                formControlName="password"
+                placeholder="Password"
+              />
+              <div
+                *ngIf="password?.invalid && password?.touched"
+                class="text-danger require"
+              >
+                <div
+                  *ngIf="password?.errors?.required"
+                  class="text-danger require"
+                >
+                  password is required
+                </div>
+                <div
+                  *ngIf="password?.errors?.minLength"
+                  class="text-danger f-size-10px require"
+                >
+                  password must be a leaset 6 character
+                </div>
+              </div>
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input
+              type="submit"
+              value="Login"
+              class="btn solid"
+              (click)="handleCloseForm()"
+            />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -32,21 +68,63 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <form action="#" class="sign-up-form" [formGroup]="exform">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input
+                formControlName="userName"
+                type="text"
+                placeholder="Username"
+              />
+              <p
+                *ngIf="userName?.invalid && userName?.touched"
+                class="text-danger require"
+              >
+                username is required
+              </p>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" placeholder="Email" />
+              <div
+                *ngIf="email?.invalid && email?.touched"
+                class="text-danger require"
+              >
+                Email is Required
+              </div>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                formControlName="password"
+                placeholder="Password"
+              />
+              <div
+                *ngIf="password?.invalid && password?.touched"
+                class="text-danger require"
+              >
+                <div
+                  *ngIf="password?.errors?.required"
+                  class="text-danger require"
+                >
+                  password is required
+                </div>
+                <div
+                  *ngIf="password?.errors?.minLength"
+                  class="text-danger f-size-10px require"
+                >
+                  password must be a leaset 6 character
+                </div>
+              </div>
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input
+              type="submit"
+              class="btn"
+              value="Sign up"
+              (click)="handleCloseForm()"
+            />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">

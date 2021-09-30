@@ -1,47 +1,87 @@
 .categorise-line {
-    background-color: #40a944;
-    padding: 10px 0;
+  background-color: #40a944;
+  padding: 10px 0;
 
-    .all-category {
-        position: relative;
-        cursor: pointer;
+  .all-category {
+    position: relative;
+    cursor: pointer;
 
-        .drop-down {
-            position: absolute;
-            top: 33px;
-            left: 0;
-            z-index: 5;
-            border: 1px solid rgba(51, 51, 51, 0.274);
-            border-radius: 3px;
+    .drop-down {
+      position: absolute;
+      top: 33px;
+      left: 0;
+      z-index: 5;
+      border: 1px solid rgba(51, 51, 51, 0.274);
+      border-radius: 3px;
 
-            li {
-                padding: 0 25px;
-                transition: all 0.35s ease-in;
-                margin-bottom: 10px;
+      li {
+        padding: 0 25px;
+        transition: all 0.35s ease-in;
+        margin-bottom: 10px;
 
-                a {
-                    color: black;
-                    font-size: 12px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                }
-
-                &:hover {
-
-                    a {
-                        color: #40a944;
-                    }
-                }
-            }
+        a {
+          color: black;
+          font-size: 12px;
+          text-decoration: none;
+          text-transform: uppercase;
         }
+
+        &:hover {
+          a {
+            color: #40a944;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-line {
+    > li {
+      a {
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: none;
+      }
     }
 
-    .menu-line {
+    li.menu-drop {
+      position: relative;
+
+      &:hover {
+        a {
+          color: #333;
+          text-decoration: none;
+        }
+
+        .dropdown-link {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .dropdown-link {
+        position: absolute;
+        bottom: -124px;
+        left: 0;
+        z-index: 999;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s ease-in;
+
         li {
-            a {
-                font-size: 15px;
-                font-weight: 400;
-            }
+          padding: 8px 20px;
+          transition: all 0.3s ease-in;
+          cursor: pointer;
+
+          &:hover {
+            background: #40a944;
+            color: #fff;
+          }
         }
+      }
     }
+  }
 }

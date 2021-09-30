@@ -3,7 +3,7 @@ import { Product } from 'src/app/models/product';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { MessageService } from 'src/app/services/message.service';
-
+import { SharedData } from 'src/app/models/share-data';
 @Component({
   selector: 'app-cart-detail',
   templateUrl: './cart-detail.component.html',

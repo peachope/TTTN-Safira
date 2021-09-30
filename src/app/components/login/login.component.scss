@@ -104,6 +104,14 @@ $primary-color: #40A944;
         color: #acacac;
         transition: 0.5s;
         font-size: 1.1rem;
+
+
+    }
+
+    .input-field .require {
+        min-width: 300px;
+        margin-left: 20px;
+        font-size: 11px;
     }
 
     .input-field input {
@@ -401,6 +409,7 @@ $primary-color: #40A944;
 @media (max-width: 570px) {
     form {
         padding: 0 1.5rem;
+
     }
 
     .image {
